@@ -1,0 +1,19 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "dependencies": {
+        "body-parser": "latest",
+        "cors": "latest",
+        "express": "latest",
+        "pg": "latest",
+        "morgan": "latest",
+        "reflect-metadata": "latest",
+        "routing-controllers": "latest"
+    },
+    "devDependencies": {
+        "@types/body-parser": "latest",
+        "@types/express": "latest",
+        "@types/pg": "latest",
+        "@types/morgan": "latest"
+    }
+}

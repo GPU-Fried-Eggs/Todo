@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "esnext",
+        "sourceMap": true,
+        "rootDir": "src/ts",
+        "outDir": "dist"
+    },
+    "exclude": [
+        "node_modules",
+        "server"
+    ]
+}

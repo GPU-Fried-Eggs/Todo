@@ -1,0 +1,23 @@
+{
+    "name": "todo",
+    "version": "1.0.0",
+    "dependencies": {
+        "server": "file:server"
+    },
+    "devDependencies": {
+        "typescript": "latest",
+        "ts-node": "latest",
+        "webpack": "latest",
+        "webpack-cli": "latest",
+        "webpack-dev-server": "latest",
+        "html-webpack-plugin": "latest",
+        "copy-webpack-plugin": "latest",
+        "css-loader": "latest",
+        "ts-loader": "latest"
+    },
+    "scripts": {
+        "start": "ts-node server/index.ts",
+        "start:page": "webpack serve",
+        "build": "webpack build"
+    }
+}
