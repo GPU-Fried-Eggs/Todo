@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("node:path");
+const { DefinePlugin } = require("webpack");
 
 module.exports = {
     entry: "./src/ts/index.ts",
@@ -37,6 +38,9 @@ module.exports = {
                     from: "src/css",
                 },
             ],
+        }),
+        new DefinePlugin({
+            SERVICE_URL: JSON.stringify(process.env["SERVICE_URL"] ?? "http://localhost:3000")
         })
     ],
     devServer: {

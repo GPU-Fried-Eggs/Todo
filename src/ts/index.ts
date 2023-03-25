@@ -1,8 +1,8 @@
+import { SERVICE_URL } from "./config";
 import { Todos } from "./Todos";
 import { Task } from "./Task";
 
-const BACKEND_URL = "http://localhost:3000"
-const todos = new Todos(BACKEND_URL);
+const todos = new Todos(SERVICE_URL);
 
 const list = <HTMLUListElement>document.querySelector("#todo-list");
 const input = <HTMLInputElement>document.querySelector("#new-todo");

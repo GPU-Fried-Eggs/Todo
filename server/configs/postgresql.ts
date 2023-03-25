@@ -5,5 +5,6 @@ export const config: PoolConfig = {
     host: process.env["db_host"] ?? "localhost",
     database: process.env["db_database"] ?? "todo",
     password: process.env["db_password"] ?? "root",
-    port: +(process.env["db_port"] ?? 5432)
+    port: +(process.env["db_port"] ?? 5432),
+    ssl: Boolean(process.env["db_ssl"])
 }
