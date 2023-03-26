@@ -40,7 +40,9 @@ module.exports = {
             ],
         }),
         new DefinePlugin({
-            SERVICE_URL: JSON.stringify(process.env["SERVICE_URL"] ?? "http://localhost:3000")
+            'process.env': {
+                SERVICE_URL: JSON.stringify(process.env["SERVICE_URL"] ?? "http://localhost:3000")
+            }
         })
     ],
     devServer: {

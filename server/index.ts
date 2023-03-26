@@ -6,6 +6,7 @@ import { port } from "./configs/server";
 import morgan from "morgan";
 
 const app = createExpressServer({
+    cors: true,
     controllers: [TodoController]
 });
 

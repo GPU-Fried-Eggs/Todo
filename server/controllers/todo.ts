@@ -1,12 +1,10 @@
-import { Controller, Param, Delete, Body, Get, Post, UseBefore } from "routing-controllers";
+import { Controller, Param, Delete, Body, Get, Post } from "routing-controllers";
 import { config } from "../configs/postgresql";
 import { Pool } from "pg";
-import cors from "cors";
 
 @Controller()
 export class TodoController {
     @Get("/")
-    @UseBefore(cors())
     async getAll() {
         const pool = new Pool(config);
         try {
@@ -18,7 +16,6 @@ export class TodoController {
     }
 
     @Post("/")
-    @UseBefore(cors())
     async post(@Body() task: any) {
         const pool = new Pool(config);
         try {

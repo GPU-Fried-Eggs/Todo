@@ -17,7 +17,7 @@
     },
     "scripts": {
         "start": "ts-node server/index.ts",
-        "start:page": "webpack serve",
-        "build": "webpack build"
+        "build": "webpack build",
+        "devlop": "webpack serve"
     }
 }

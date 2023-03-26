@@ -8,12 +8,19 @@
         "pg": "latest",
         "morgan": "latest",
         "reflect-metadata": "latest",
-        "routing-controllers": "latest"
+        "routing-controllers": "latest",
+        "class-transformer": "latest",
+        "class-validator": "latest"
     },
     "devDependencies": {
+        "typescript": "latest",
         "@types/body-parser": "latest",
         "@types/express": "latest",
         "@types/pg": "latest",
         "@types/morgan": "latest"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "build": "tsc --project tsconfig.json"
     }
 }
