@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: todo-service
+    plan: free
+    env: node
+    buildCommand: yarn; yarn build
+    startCommand: yarn start
+    envVars:
+      - key: db_user
+        fromDatabase:
+          name: todo-data
+          property: user
+      - key: db_database
+        fromDatabase:
+          name: todo-data
+          property: database
+      - key: db_password
+        fromDatabase:
+          name: todo-data
+          property: password
+      - key: db_port
+        fromDatabase:
+          name: todo-data
+          property: port
+      - key: db_host
+        fromDatabase:
+          name: todo-data
+          property: host
+      - key: db_connectionString
+        fromDatabase:
+          name: todo-data
+          property: connectionString
+  - type: web
+    name: todo-view
+    plan: free
+    env: static
+    buildCommand: yarn build
+    staticPublishPath: ./dist
+    envVars:
+      - key: SERVICE_URL
+        fromService:
+          type: web
+          name: todo-service
+          property: host
+databases:
+  - name: todo-data
+    plan: free
