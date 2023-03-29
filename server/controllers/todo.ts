@@ -1,5 +1,6 @@
 import { Controller, Param, Delete, Body, Get, Post } from "routing-controllers";
 import { config } from "../configs/postgresql";
+import { Task } from "../models/task";
 import { Pool } from "pg";
 
 @Controller()
@@ -16,11 +17,11 @@ export class TodoController {
     }
 
     @Post("/")
-    async post(@Body() task: any) {
+    async post(@Body() task: Task) {
         const pool = new Pool(config);
         try {
             const result = await pool.query("insert into task (description) values ($1) returning *", [task.description]);
-            return result.rows[0];
+            return { id: result.rows[0].id };
         } catch (error) {
             throw new Error(error.message);
         }

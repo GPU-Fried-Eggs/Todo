@@ -5,8 +5,8 @@
         "server": "file:server"
     },
     "devDependencies": {
-        "typescript": "latest",
         "ts-node": "latest",
+        "typescript": "latest",
         "webpack": "latest",
         "webpack-cli": "latest",
         "webpack-dev-server": "latest",

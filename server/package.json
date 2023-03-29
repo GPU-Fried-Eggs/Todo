@@ -3,21 +3,20 @@
     "version": "1.0.0",
     "dependencies": {
         "body-parser": "latest",
+        "class-transformer": "latest",
+        "class-validator": "latest",
         "cors": "latest",
         "express": "latest",
         "pg": "latest",
-        "morgan": "latest",
         "reflect-metadata": "latest",
-        "routing-controllers": "latest",
-        "class-transformer": "latest",
-        "class-validator": "latest"
+        "routing-controllers": "latest"
     },
     "devDependencies": {
-        "typescript": "latest",
         "@types/body-parser": "latest",
+        "@types/cors": "latest",
         "@types/express": "latest",
         "@types/pg": "latest",
-        "@types/morgan": "latest"
+        "typescript": "latest"
     },
     "scripts": {
         "start": "node index.js",

@@ -1,15 +1,18 @@
 import "reflect-metadata";
 
-import { createExpressServer } from "routing-controllers";
+import { useExpressServer } from "routing-controllers";
 import { TodoController } from "./controllers/todo";
 import { port } from "./configs/server";
-import morgan from "morgan";
+import express from "express";
 
-const app = createExpressServer({
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+useExpressServer(app, {
     cors: true,
     controllers: [TodoController]
 });
-
-app.use(morgan("dev"));
 
 app.listen(port);

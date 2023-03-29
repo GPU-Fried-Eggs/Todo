@@ -9,14 +9,14 @@ export class Todos {
     }
 
     async getTasks() {
-        const response: Response = await fetch(this.backendUrl);
+        const response: Response = await fetch(this.backendUrl, { method: "GET" });
         const result = await response.json();
         this.resolveJson(result);
         return this.tasks
     }
 
     async addTask(text: string) {
-        const response: Response = await fetch(`${this.backendUrl}/`, {
+        const response: Response = await fetch(this.backendUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ description: text })
@@ -28,7 +28,8 @@ export class Todos {
     async removeTask(id: number) {
         const response: Response = await fetch(`${this.backendUrl}/${id}`, { method: "DELETE" });
         const result = await response.json();
-        return this.removeJson(+result.id);
+        this.removeJson(+result.id);
+        return +result.id
     }
 
     private resolveJson(json: any): void {

@@ -9,7 +9,7 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: "ts-loader",
                 exclude: /node_modules/,
             },
             {
@@ -19,7 +19,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: [".tsx", ".ts", ".js"],
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -40,7 +40,7 @@ module.exports = {
             ],
         }),
         new DefinePlugin({
-            'process.env': {
+            "process.env": {
                 SERVICE_URL: JSON.stringify(process.env["SERVICE_URL"] ?? "http://localhost:3000")
             }
         })
